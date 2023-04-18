@@ -1,0 +1,308 @@
+body {
+    background-color: #ececec;
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    display: flex;
+    height: 90px;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 2px solid #d14334;
+}
+.aside{
+    border-right: 2px solid #d14334;
+}
+.homeAside {
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+}
+
+.taskHomeAside {
+    border-radius: 3px 3px 0 0;
+    margin-left: 15px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 17px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #028f76;
+    color: white;
+    border: 0px;
+    margin-bottom: 0;
+}
+
+.taskHomeAside:first-child {
+    background-color: #d14334;
+    color: white;
+}
+
+/* .allTasksTasks {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+} */
+
+
+.titleAllTasks {
+    box-sizing: border-box; 
+    padding-left: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px 0 4px 4px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    /* line-height: 30px; */
+    font-size: 50px;
+    color: white;
+    background-color: #d14334;
+}
+.allTasksContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.task, .taskN{
+    min-height: 40px;
+    height: max(100px, max-content);
+    width: 90%;
+    border-radius: 3px;
+    border: 1px solid #028f76;
+    display: grid;
+    gap: 5px;
+    /* justify-content: space-between; */
+    grid-template-columns: repeat(6,1fr);
+    align-items: center;
+    font-size: 20px;    
+}
+.taskN{
+    grid-template-columns: repeat(5,1fr);
+    word-break:break-all;
+}
+.projectsAsideContainer{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr;
+
+    min-height: 40px;
+    height: max(100px, max-content);
+    border-radius: 3px;
+    /* border: 1px solid #028f76; */
+   
+    align-items: center;
+    font-size: 20px; 
+}
+.pushedProject{
+    display: grid;
+    gap: 2px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.pushedProject > button, .taskDescrContainer > button{
+    font-size: 17px;
+    background-color: #028f76;
+    color: white;
+    border: 0;
+    border-radius: 2px;
+}
+.taskDescrDescription{
+    display: none;
+}
+/* .taskDescr{
+    cursor: pointer;
+    font-size: 20px;
+    border: 0;
+    background-color: #ececec;
+} */
+.taskDescrDescription{
+    position: absolute;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); 
+}
+.taskDescrContainer{   
+    padding: 7px;
+    width: min(300px, 40%);
+    min-height: 200px;
+    height: auto;
+    overflow: auto;
+    background-color: #ececec;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.taskDescrDescriptionText{
+    word-wrap: break-word;
+}
+.deleteTask, .taskDescr{
+    height: 70%;
+    background-color: #028f76;
+    color: white;
+    border: 0;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+.deleteTask:active, .taskDescr:active, .formBtnContainer > button:active{
+    background-color: #0d6454;
+    outline: 2px solid ;
+}
+
+.pProjectsAside{   
+    font-size: 25px;   
+    text-decoration: underline;
+    text-decoration-color: #028f76;
+    margin-bottom: 30px;
+}
+.btnAddProject{
+    display: block;
+    font-size: 16px;   
+    background-color: #028f76;
+    padding: 5px;
+    margin-top: 30px;
+    color: white;
+    border: 0;
+    border-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.formProjectcontainer{
+    width: 95%;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    /* display: grid; */
+    /* grid-template-columns: repeat(2,1fr); */
+    grid-template-rows: 35px 25px;
+    grid-template-areas: 'input'
+                        'btns';
+    row-gap: 10px;
+}
+.projectNameInput{
+    grid-area: input;
+    width: 100%;
+    /* padding-bottom: 5px; */
+}
+.formBtnContainer{
+    grid-area: btns;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 'addd cancel';
+}
+.formBtnContainer > button, .formTasksBtn{
+    background-color: #028f76;
+    color: white;
+    border: 0;
+    border-radius: 2px;
+    font-size: 1.2rem;
+}
+.formTasksBtn{
+    width: 48%;
+    height: 30px;
+}
+.formBtn:first-child{
+    grid-area: addd;
+}
+.formBtn:last-child{
+    grid-area: cancel;
+}
+
+.formProjectcontainer > input {
+    font-size: 20px;
+}
+
+.closeDescription{
+    height: 20px;
+}
+.formInput{
+    width: 100%;
+}
+@media screen and (max-width: 1000px) {
+    .task{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .aside{
+        box-sizing: border-box;
+        padding: 10px;
+        border-right: 0;
+        border-bottom: 2px solid #d14334;
+    }
+    .titleAllTasks{
+        height: 50px;
+    }
+}
+@media screen and (max-width: 750px) {
+    .titleAllTasks{
+        height: 40px;
+        font-size: 25px;
+    } 
+    .task{
+        
+        min-height: 65px;
+        height: auto;
+        display: grid;
+        gap: 5px;
+        grid-template-rows: auto max(20px, auto);
+        grid-template-columns: repeat(2, 2fr) 1fr;
+        font-size: 17px;
+    }
+    .task > button{
+        height: 18px;
+    }
+    .taskN{
+        width: 100%;
+        
+        min-height: 40px;
+        height: auto;
+        display: grid;
+        gap: 5px;
+        grid-template-rows: auto ;
+        grid-template-columns: 2fr repeat(4, 1fr);
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .titleAllTasks{
+        border-radius: 0 0 4px 4px;
+    }
+    .homeAside{
+        justify-content: space-between;
+        width: 100%;
+        font-size: 15px;
+    }
+    .taskHomeAside{
+        margin: 0;
+    }
+    .task, .taskN{
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+}
