@@ -21,9 +21,10 @@ importantTasks.addEventListener('click', () => {
        console.log('TOF imp')
     console.log(TOF)
     
+    importantTasks.style.background = '#d14334'
     tasksHomeAside.forEach((el,i)=>{
         if(i!=3){
-            // el.style.color = 'green'
+           el.style.background = '#028f76'
         }
     })
     titleAllTasks.innerHTML = importantTasks.innerHTML
