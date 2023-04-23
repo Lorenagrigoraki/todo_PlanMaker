@@ -20,7 +20,7 @@ importantTasks.addEventListener('click', () => {
        }
        console.log('TOF imp')
     console.log(TOF)
-    
+    //changes
     importantTasks.style.background = '#d14334'
     tasksHomeAside.forEach((el,i)=>{
         if(i!=3){
