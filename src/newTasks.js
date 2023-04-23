@@ -1,6 +1,7 @@
+//changes 23/04/2023
 import { allTasks } from './asideBtnAllTasks.js'
 import { allImportantTasks } from './asideBtnImportant.js'
-import { component, allTasksContainer, formTasksBtns, formTaskContainer } from './index.js'
+import { component, allTasksContainer, formTasksBtns, formTaskContainer, tasksHomeAside } from './index.js'
 import { addTask, projects } from './newProject.js'
 import { projectIndex } from './newProject.js'
 import { differenceInCalendarDays, format } from 'date-fns'
@@ -176,6 +177,7 @@ export function renderTask(index) {
 formTasksBtns[0].addEventListener('click', (evt) => {
     evt.preventDefault();
     // console.log('hi')
+    tasksHomeAside.forEach((el,i)=> el.style.background = '#028f76')
     addTaskTask()
     clearInputs()
 })
